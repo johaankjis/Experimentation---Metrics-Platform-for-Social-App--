@@ -248,6 +248,7 @@ platform:
 ### Running an Experiment
 
 ```python
+# Run from repository root
 from src.ab_framework.assignment import UserAssignment, ExperimentConfig, ExperimentStatus
 
 # Define experiment
@@ -271,6 +272,7 @@ print(f"User assigned to: {variant}")
 ### Computing Metrics
 
 ```python
+# Run from repository root
 from src.ab_framework.metrics import MetricDefinition, MetricType, MetricAggregation
 
 # Define a metric
@@ -288,6 +290,7 @@ conversion_metric = MetricDefinition(
 ### Running Statistical Tests
 
 ```python
+# Run from repository root
 from src.ab_framework.stats_tests import StatisticalTester, TestType
 
 # Prepare data
@@ -480,7 +483,7 @@ Supporting metrics for understanding user behavior:
 **Airflow DAGs not appearing**
 - Check DAG file syntax: `python airflow/dags/experiment_pipeline_dag.py`
 - Verify file is in correct directory
-- Check Airflow logs: `docker-compose logs airflow-scheduler`
+- Check Airflow scheduler logs: `cd airflow && docker-compose logs airflow-scheduler`
 - Ensure DAG is not paused in UI
 
 ## 📞 Support
